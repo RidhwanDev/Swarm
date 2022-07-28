@@ -1,6 +1,6 @@
-# Website
+# Swam
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The world's first open source blog
 
 ### Installation
 
