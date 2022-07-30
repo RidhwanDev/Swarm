@@ -4,14 +4,14 @@ import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  Svg: React.ComponentType<React.ComponentProps<"svg" | "img">>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: "Power to the people",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    Svg: require("@site/static/img/group.svg").default,
     description: (
       <>
         Driven by the community to deliver the most accurate and agreed upon
@@ -21,17 +21,17 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Ever growing",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    Svg: require("@site/static/img/growing.svg").default,
     description: (
       <>While trends change and new best practices arise, so do we.</>
     ),
   },
   {
     title: "Reliable",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/handshake.svg").default,
     description: (
       <>
-        Rewiewed and approved by proffesionals around the world on a frequent
+        Reviewed and approved by professionals around the world on a frequent
         basis.
       </>
     ),

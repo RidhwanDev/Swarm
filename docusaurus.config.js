@@ -33,6 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -41,6 +42,7 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        blog: false,
       }),
     ],
   ],
@@ -57,7 +59,7 @@ const config = {
         title: "Swarm",
         logo: {
           alt: "Swarm Logo",
-          src: "img/logo.svg",
+          src: "img/swam_logo.svg",
         },
         items: [
           {
@@ -81,19 +83,19 @@ const config = {
             items: [
               {
                 label: "Introduction",
-                to: "/docs/intro",
+                to: "/intro",
               },
               {
                 label: "Leadership",
-                to: "/docs/category/leadership",
+                to: "/category/leadership",
               },
               {
                 label: "Roles",
-                to: "/docs/category/roles",
+                to: "/category/roles",
               },
               {
                 label: "Agile",
-                to: "/docs/category/agile",
+                to: "/category/agile",
               },
             ],
           },
