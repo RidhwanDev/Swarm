@@ -2,7 +2,7 @@
 
 The world's first open source blog
 
-Please see the (Intro)[https://github.com/RidhwanDev/Swarm/blob/main/docs/intro.md] page for information about the project.
+Please see the [Intro](https://github.com/RidhwanDev/Swarm/blob/main/docs/intro.md) page for information about the project.
 
 This readme file will be about making contributions to the repository.
 
