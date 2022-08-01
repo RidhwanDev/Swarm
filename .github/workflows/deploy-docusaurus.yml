@@ -30,4 +30,4 @@ jobs:
           git config --global user.email "RidhwanDev"
           git config --global user.name "Ridhwan"
           echo "machine github.com login RidhwanDev password $GITHUB_TOKEN" > ~/.netrc
-          GIT_USER=RidhwanDev npm run publish-gh-pages
+          GIT_USER=RidhwanDev npm run deploy
