@@ -9,21 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Cache modules
-        uses: actions/cache@v1
-        id: npm-cache
+      - uses: actions/checkout@master
+      - uses: redkubes/docusaurus-deploy-action@v1
         with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-
-      - name: Use Node.js 16.14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.14.x
-      - name: Install dependencies
-        run: npm i
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        run: npm run deploy
+          source-folder: website
+          git-user: RidhwanDev
+          git-password: ${{ secrets.GITHUB_TOKEN }}
+          deployment-branch: gh-pages
