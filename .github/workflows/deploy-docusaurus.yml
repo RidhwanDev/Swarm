@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        command: |
+        run: |
           git config --global user.email "RidhwanDev"
           git config --global user.name "Ridhwan"
           echo "machine github.com login RidhwanDev password $GITHUB_TOKEN" > ~/.netrc
