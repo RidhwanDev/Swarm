@@ -43,10 +43,13 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         blog: false,
+        gtag: {
+          trackingID: "G-WCRC2L0G21",
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
