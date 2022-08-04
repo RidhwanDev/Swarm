@@ -42,6 +42,7 @@ The method to contribute will improve in the future to a more streamlined approa
 - Make changes to the the `md` files under `/docs`
 - Commit your changes to your Fork
 - Raise a PR against the master branch on github
+- Once the PR is approved and merged the changes will automatically be deployed to the site.
 
 There is more detailed explanation in the Readme file which can be found on [Github](https://github.com/RidhwanDev/Swarm/).
 
