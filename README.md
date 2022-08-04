@@ -65,3 +65,5 @@ Click on `Create pull request` button.
 Congratulations you've made your suggestion!
 
 This will then be reviewed and merged in and be reflected on the main site.
+
+Once your pull request in merged into the main branch, it will start the pipeline to deploy the changes. The changes should take effect on the website within a few minutes.
