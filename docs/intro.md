@@ -11,7 +11,7 @@ This site is experimental is actively being worked on. It is going to be used to
 
 I am currently streaming when working on the site so you can tune in on [Twitch](https://www.twitch.tv/ridhwanio) or watch the streams back on my [Youtube channel](https://www.youtube.com/watch?v=pjo7yp0_3p4).
 
-Join the community: [Discord](https://discord.gg/Gk4nmH5A)
+Join the community: [Discord](https://discord.gg/sSZYHBUxPa)
 
 #### Update 30/07/2022
 
