@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
+title: Scrum
 ---
-
-# Scrum
 
 What is scrum?

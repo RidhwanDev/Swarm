@@ -1,7 +1,6 @@
 ---
 sidebar_position: 4
+title: Extreme Programming
 ---
-
-# Extreme Programming
 
 What is Extreme Programming?

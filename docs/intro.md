@@ -3,8 +3,6 @@ sidebar_position: 1
 title: Introduction
 ---
 
-# Introduction
-
 The world's first open source blog. (Technically not a blog)
 
 This site is experimental is actively being worked on. It is going to be used to test whether this method of writing articles is viable. See [Road map](#road-map) for how this app will evolve in the future.
