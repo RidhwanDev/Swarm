@@ -1,7 +1,6 @@
 ---
 sidebar_position: 2
+title: Kanban
 ---
-
-# Kanban
 
 What is Kanban?

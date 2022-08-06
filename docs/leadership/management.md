@@ -1,7 +1,6 @@
 ---
 sidebar_position: 3
+title: Management
 ---
-
-# Management
 
 How to get into management and where to begin.
