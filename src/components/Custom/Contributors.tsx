@@ -2,11 +2,14 @@ import {
   Avatar,
   AvatarGroup,
   AvatarGroupProps,
+  Skeleton,
   styled,
   ThemeProvider,
   Tooltip,
 } from "@mui/material";
-import React, { useCallback, useEffect, useState } from "react";
+import { fetchAuthors } from "../../api/github/authors";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import { theme } from "../../theme";
 
 const StyledAvatarGroup = styled(AvatarGroup)<AvatarGroupProps>(
@@ -16,51 +19,56 @@ const StyledAvatarGroup = styled(AvatarGroup)<AvatarGroupProps>(
   })
 );
 
+const StyledSkeleton = styled(Skeleton)(({ theme }) => ({
+  marginRight: -10,
+}));
 interface Props {
   pathname: any;
 }
 
 export const Contributors: React.FC<Props> = ({ pathname }) => {
-  const [authors, setAuthors] = useState({});
-  const url = `https://api.github.com/repos/RidhwanDev/Swarm/commits?path=docs${pathname.replace(
-    "/Swarm",
-    ""
-  )}.md`;
-
-  const fetchData = useCallback(async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    const authorsObject = {};
-    for (let i = 0; i < data.length; i++) {
-      const commit = data[i];
-      if (commit.author && !authorsObject[commit.author.login]) {
-        authorsObject[commit.author.login] = commit.author.avatar_url;
-      }
+  const { isLoading, isError, data } = useQuery(
+    ["authors", pathname],
+    async () => await fetchAuthors(pathname),
+    {
+      refetchInterval: false,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
     }
+  );
 
-    setAuthors(authorsObject);
-  }, []);
+  if (isLoading) {
+    return (
+      <>
+        <Skeleton variant="rectangular" height={16} width={50} />
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+        <StyledAvatarGroup max={5} total={5}>
+          <StyledSkeleton variant="circular" width={40} height={40} />
+          <StyledSkeleton variant="circular" width={40} height={40} />
+          <StyledSkeleton variant="circular" width={40} height={40} />
+          <StyledSkeleton variant="circular" width={40} height={40} />
+          <StyledSkeleton variant="circular" width={40} height={40} />
+        </StyledAvatarGroup>
+      </>
+    );
+  }
 
-  if (!Object.keys(authors).length) {
+  if (isError || !Object.keys(data).length) {
     return null;
   }
 
   return (
     <ThemeProvider theme={theme}>
       <h6 style={{ marginBottom: 5 }}>Contributors</h6>
-      <StyledAvatarGroup max={10} total={Object.keys(authors).length}>
-        {Object.keys(authors).map((author) => (
-          <Tooltip title={author}>
+
+      <StyledAvatarGroup max={10} total={Object.keys(data).length}>
+        {Object.keys(data).map((author) => (
+          <Tooltip title={author} key={author}>
             <Avatar
-              sizes="large"
+              sizes="40px"
               alt={author}
-              src={authors[author]}
-              key={author}
+              src={data[author].replace("?", "?s=40&")}
               onClick={() => {
                 const win = window.open(
                   `https://github.com/${author}`,
