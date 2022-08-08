@@ -4,7 +4,7 @@ import { ThemeClassNames } from "@docusaurus/theme-common";
 import { useDoc } from "@docusaurus/theme-common/internal";
 import Heading from "@theme/Heading";
 import MDXContent from "@theme/MDXContent";
-import { Contributors } from "@site/src/components/Custom/Contributors";
+import { ContributorWrapper } from "@site/src/components/Custom/ContributorWrapper";
 import { useLocation } from "@docusaurus/router";
 /**
  Title can be declared inside md content or declared through
@@ -35,7 +35,7 @@ export default function DocItemContent({ children }) {
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
       )}
-      <Contributors pathname={location.pathname} />
+      <ContributorWrapper pathname={location.pathname} />
       <MDXContent>{children}</MDXContent>
     </div>
   );
