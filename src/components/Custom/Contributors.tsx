@@ -26,6 +26,8 @@ interface Props {
   pathname: any;
 }
 
+const header = () => <h6 style={{ marginBottom: 5 }}>Contributors</h6>;
+
 export const Contributors: React.FC<Props> = ({ pathname }) => {
   const { isLoading, isError, data } = useQuery(
     ["authors", pathname],
@@ -41,8 +43,7 @@ export const Contributors: React.FC<Props> = ({ pathname }) => {
   if (isLoading) {
     return (
       <>
-        <Skeleton variant="rectangular" height={16} width={50} />
-
+        {header()}
         <StyledAvatarGroup max={5} total={5}>
           <StyledSkeleton variant="circular" width={40} height={40} />
           <StyledSkeleton variant="circular" width={40} height={40} />
@@ -60,7 +61,7 @@ export const Contributors: React.FC<Props> = ({ pathname }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <h6 style={{ marginBottom: 5 }}>Contributors</h6>
+      {header()}
 
       <StyledAvatarGroup max={10} total={Object.keys(data).length}>
         {Object.keys(data).map((author) => (
