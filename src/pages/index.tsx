@@ -31,7 +31,8 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Home`}
-      description="Description will go into a meta tag in <head />"
+      //need to replace below with meta tag in <head /> 
+      description="The World's First Open Source Blog"
     >
       <HomepageHeader />
       <main>
